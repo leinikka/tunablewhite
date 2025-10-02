@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tunable White Tetris | LED Light Game</title>
+    <link rel="stylesheet" href="tetris.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1 class="game-title">
+                <span class="title-light">💡</span>
+                Tunable White Tetris
+                <span class="title-light">💡</span>
+            </h1>
+            <p class="game-subtitle">Arrangera LED-lamporna för att skapa perfekt belysning!</p>
+        </header>
+
+        <div class="game-content">
+            <div class="game-info">
+                <div class="score-panel">
+                    <div class="score-item">
+                        <h3>Poäng</h3>
+                        <div id="current-score" class="score-value">0</div>
+                    </div>
+                    <div class="score-item">
+                        <h3>High Score</h3>
+                        <div id="high-score" class="score-value">0</div>
+                    </div>
+                    <div class="score-item">
+                        <h3>Nivå</h3>
+                        <div id="level" class="score-value">1</div>
+                    </div>
+                </div>
+
+                <div class="next-piece-container">
+                    <h3>Nästa lampa</h3>
+                    <canvas id="next-piece" width="120" height="120"></canvas>
+                </div>
+
+                <div class="controls-info">
+                    <h3>Kontroller</h3>
+                    <div class="control-item">
+                        <span class="control-key">←→</span>
+                        <span>Flytta</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">↓</span>
+                        <span>Snabbare</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">↑</span>
+                        <span>Rotera</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">Space</span>
+                        <span>Pausa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-board-container">
+                <canvas id="game-board" width="300" height="600"></canvas>
+                <div id="game-over-overlay" class="game-over-overlay hidden">
+                    <div class="game-over-content">
+                        <h2>Spelet över!</h2>
+                        <p>Din poäng: <span id="final-score">0</span></p>
+                        <p id="new-high-score" class="new-high-score hidden">🎉 Nytt rekord!</p>
+                        <button id="restart-btn" class="restart-btn">Spela igen</button>
+                        <a href="index.html" class="back-btn">Tillbaka till hemsidan</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-legend">
+                <h3>LED-lamptyper</h3>
+                <div class="legend-grid">
+                    <div class="legend-item">
+                        <div class="legend-shape spotlight"></div>
+                        <span>Spotlight</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-shape panel"></div>
+                        <span>Panel</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-shape strip"></div>
+                        <span>Strip</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-shape bulb"></div>
+                        <span>Bulb</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-shape tube"></div>
+                        <span>Tube</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-actions">
+            <button id="start-btn" class="game-btn primary">Starta spel</button>
+            <button id="pause-btn" class="game-btn" disabled>Pausa</button>
+            <button id="reset-btn" class="game-btn">Återställ</button>
+        </div>
+
+        <footer class="game-footer">
+            <p>Ett Tunable White pilot-projekt. Arrangera LED-lamporna för optimal belysning!</p>
+            <a href="index.html" class="home-link">← Tillbaka till Tunable White</a>
+        </footer>
+    </div>
+
+    <script src="tetris.js"></script>
+</body>
+</html>
